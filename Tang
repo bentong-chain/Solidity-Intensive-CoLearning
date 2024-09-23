@@ -48,44 +48,35 @@ timezone: Australia/Sydney # 澳大利亚东部标准时间 (UTC+10)
 <!-- Content_START -->
 
 ### 2024.09.23
+#### 软件许可(license)
+##### 分类
+###### 1. 开源许可证
+开源许可证允许用户自由使用、修改和分发软件，通常要求用户在分发修改后的版本时遵守特定的条款。
+* MIT许可证：非常宽松的开源许可，允许几乎任何用途，包括商业使用，唯一的要求是保留原始的版权声明和许可信息。
+* Apache许可证 2.0：允许自由使用和分发，用户可以修改源代码，但要求保留版权声明和所有原始贡献者的许可证声明。它还包含专利保护条款。
+* GPL（GNU通用公共许可证）：要求所有基于GPL软件的衍生作品也必须遵守GPL，称为“传染性”许可证。这意味着如果你使用GPL代码，你的代码也必须以GPL发布。
+* BSD许可证：类似于MIT，宽松但要求保留原始版权声明。分为2条款和3条款版本。
+      GPL 的核心思想
+       GPL 旨在确保软件的自由使用、修改和分发权利，特别是在传播和发布软件时，GPL 强制要求：
+1. 源代码的公开：任何使用 GPL 许可的软件，如果发布了修改后的版本，必须向用户提供完整的源代码。
+2. “传染性”：任何基于 GPL 许可软件的修改或衍生作品也必须以 GPL 协议发布，这意味着不能将 GPL 代码与闭源代码混合使用后再以闭源方式发布。这是所谓的“传染性”特性。
+3. 禁止附加限制：GPL 软件的用户不能对软件添加其他的使用限制，任何获得软件的用户都必须享有与原始开发者同样的权利。
+###### 2. 专有软件许可证
+专有许可证严格限制用户对软件的使用、复制和修改权限，通常规定软件只能在特定条件下使用。
+* EULA（最终用户许可协议）：这是专有软件的常见许可证，通常限制用户不能修改或逆向工程软件，并且只能在有限的设备或用户范围内使用。
+###### 3. 混合许可证
+混合许可证结合了开源和专有软件许可的特点。某些部分的代码可以是开源的，而其他部分则受到严格的专有许可证限制。
+###### 4. 公共领域（Public Domain）
+公共领域的软件没有任何版权限制，任何人都可以自由使用、修改和分发。部分开发者可能会通过声明将软件贡献到公共领域。
+许可证选择的考虑因素
+* 是否允许商业使用：有些许可证限制软件用于商业用途。
+* 是否要求公开修改后的代码：像GPL这样的许可证要求发布基于原代码的修改。
+* 是否包含专利保护：一些许可证（如Apache 2.0）提供专利保护，防止专利诉讼。
+* 兼容性问题：不同许可证之间可能存在冲突，尤其是在使用多种开源组件时。
 
-學習內容: 
-- A 系列的 Ethernaut CTF, 之前做了差不多了. POC: [ethernaut-foundry-solutions](https://github.com/SunWeb3Sec/ethernaut-foundry-solutions)
-- A 系列的 QuillAudit CTF 題目的網站關掉了, 幫大家收集了[題目](./Writeup/SunSec/src/QuillCTF/), 不過還是有幾題沒找到. 有找到題目的人可以在發出來.
-- A 系列的 DamnVulnerableDeFi 有持續更新, 題目也不錯. [Damn Vulnerable DeFi](https://github.com/theredguild/damn-vulnerable-defi/tree/v4.0.0).
-- 使用 [Foundry](https://book.getfoundry.sh/) 在本地解題目, 可以參考下面 RoadClosed 為例子
-- ``forge test --match-teat testRoadClosedExploit -vvvv``
-#### [QuillAudit CTF - RoadClosed](./Writeup/SunSec/src/QuillCTF/RoadClosed.sol)
-```
-  function addToWhitelist(address addr) public {
-    require(!isContract(addr), "Contracts are not allowed");
-    whitelistedMinters[addr] = true;
-  }
+合约中申明
+`// SPDX-License-Identifier: MIT`
 
-  function changeOwner(address addr) public {
-    require(whitelistedMinters[addr], "You are not whitelisted");
-    require(msg.sender == addr, "address must be msg.sender");
-    require(addr != address(0), "Zero address");
-    owner = addr;
-  }
-
-  function pwn(address addr) external payable {
-    require(!isContract(msg.sender), "Contracts are not allowed");
-    require(msg.sender == addr, "address must be msg.sender");
-    require(msg.sender == owner, "Must be owner");
-    hacked = true;
-  }
-
-  function pwn() external payable {
-    require(msg.sender == pwner);
-    hacked = true;
-  }
-```
-- 解決這個題目需要成為合約的 owner 和 hacked = true.
-- On-chain: 可以透過 ``cast send`` 或是 forge script 來解.
-- Local: 透過 forge test 通常是在local解題, 方便 debug.
-- RoadClosed 為例子我寫了2個解題方式. testRoadClosedExploit 和 testRoadClosedContractExploit (因為題目有檢查msg.sender是不是合約, 所以可以透過constructor來繞過 isContract)
-- [POC](./Writeup/SunSec/test/QuillCTF/RoadClosed.t.sol) 
 
 ### 
 
