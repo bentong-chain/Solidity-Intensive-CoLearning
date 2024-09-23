@@ -1,0 +1,76 @@
+---
+timezone: Asia/Shanghai
+---
+
+> 请在上边的 timezone 添加你的当地时区，这会有助于你的打卡状态的自动化更新，如果没有添加，默认为北京时间 UTC+8 时区
+> 时区请参考以下列表，请移除 # 以后的内容
+
+timezone: Pacific/Honolulu # 夏威夷-阿留申标准时间 (UTC-10)
+
+timezone: America/Anchorage # 阿拉斯加夏令时间 (UTC-8)
+
+timezone: America/Los_Angeles # 太平洋夏令时间 (UTC-7)
+
+timezone: America/Denver # 山地夏令时间 (UTC-6)
+
+timezone: America/Chicago # 中部夏令时间 (UTC-5)
+
+timezone: America/New_York # 东部夏令时间 (UTC-4)
+
+timezone: America/Halifax # 大西洋夏令时间 (UTC-3)
+
+timezone: America/St_Johns # 纽芬兰夏令时间 (UTC-2:30)
+
+timezone: Asia/Dubai # 海湾标准时间 (UTC+4)
+
+timezone: Asia/Kolkata # 印度标准时间 (UTC+5:30)
+
+timezone: Asia/Dhaka # 孟加拉国标准时间 (UTC+6)
+
+timezone: Asia/Bangkok # 中南半岛时间 (UTC+7)
+
+timezone: Asia/Shanghai # 中国标准时间 (UTC+8)
+
+timezone: Asia/Tokyo # 日本标准时间 (UTC+9)
+
+timezone: Australia/Sydney # 澳大利亚东部标准时间 (UTC+10)
+
+---
+
+# Tang
+
+1. 热爱并正在从事Web3行业相关工作，包括智能合约、Dapp等开发，准备在Web3行业创业，实现自己的人生目标。
+
+2. 温故而知新，参与本次学习主要是回顾solidity基础知识，加强自己的基本功，希望和大家一起完成本次共学。
+   
+## Notes
+
+<!-- Content_START -->
+
+### 2024.09.23
+#### 软件许可(license)
+##### 分类
+###### 1. 开源许可证
+开源许可证允许用户自由使用、修改和分发软件，通常要求用户在分发修改后的版本时遵守特定的条款。
+- MIT许可证：非常宽松的开源许可，允许几乎任何用途，包括商业使用，唯一的要求是保留原始的版权声明和许可信息。
+- Apache许可证 2.0：允许自由使用和分发，用户可以修改源代码，但要求保留版权声明和所有原始贡献者的许可证声明。它还包含专利保护条款。
+- GPL（GNU通用公共许可证）：要求所有基于GPL软件的衍生作品也必须遵守GPL，称为“传染性”许可证。这意味着如果你使用GPL代码，你的代码也必须以GPL发布。
+- BSD许可证：类似于MIT，宽松但要求保留原始版权声明。分为2条款和3条款版本。
+###### 2. 专有软件许可证
+专有许可证严格限制用户对软件的使用、复制和修改权限，通常规定软件只能在特定条件下使用。
+* EULA（最终用户许可协议）：这是专有软件的常见许可证，通常限制用户不能修改或逆向工程软件，并且只能在有限的设备或用户范围内使用。
+###### 3. 混合许可证
+混合许可证结合了开源和专有软件许可的特点。某些部分的代码可以是开源的，而其他部分则受到严格的专有许可证限制。
+###### 4. 公共领域（Public Domain）
+公共领域的软件没有任何版权限制，任何人都可以自由使用、修改和分发。部分开发者可能会通过声明将软件贡献到公共领域。
+许可证选择的考虑因素
+- 是否允许商业使用：有些许可证限制软件用于商业用途。
+- 是否要求公开修改后的代码：像GPL这样的许可证要求发布基于原代码的修改。
+- 是否包含专利保护：一些许可证（如Apache 2.0）提供专利保护，防止专利诉讼。
+- 兼容性问题：不同许可证之间可能存在冲突，尤其是在使用多种开源组件时。
+
+合约中申明
+`// SPDX-License-Identifier: MIT`
+
+
+<!-- Content_END -->
