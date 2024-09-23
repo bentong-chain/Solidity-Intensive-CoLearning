@@ -70,7 +70,8 @@ timezone: Australia/Sydney # 澳大利亚东部标准时间 (UTC+10)
 - 兼容性问题：不同许可证之间可能存在冲突，尤其是在使用多种开源组件时。
 
 合约中申明
-`// SPDX-License-Identifier: MIT`
+```
+// SPDX-License-Identifier: MIT
 
 
 <!-- Content_END -->
